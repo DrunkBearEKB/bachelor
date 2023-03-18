@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_bukin.css') }}">
+    {% block head_secondary %}
+    {% endblock %}
+{% endblock %}
+{% block div_main %}
+    <div id="div-main-header" class="div-main-header">
+        <p id="p-main-header" class="p-main-header">
+            <a id="a-main-header" class="a-main-header" href="/bukin/">Bukin</a>
+        </p>
+    </div>
+    <div id="div-main-content" class="div-main-content">
+        <div id="div-main-left" class="div-main-left">
+            <div id="div-left-info" class="div-left-panel">
+                <p id="p-left-header" class="p-left-header">Information</p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "description" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?info=description">Description</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?info=description">Description</a>
+                    {% endif %}
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "references" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?info=references">References</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?info=references">References</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div id="div-left-apps" class="div-left-panel">
+                <p id="p-left-header" class="p-left-header">Applications</p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "scheduler" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?app=scheduler">Scheduler</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?app=scheduler">Scheduler</a>
+                    {% endif %}
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "worker" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?app=worker">Worker</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?app=worker">Worker</a>
+                    {% endif %}
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "candace" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?app=candace">Candace</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?app=candace">Candace</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div id="div-left-configs" class="div-left-panel">
+                <p id="p-left-header" class="p-left-header">Configs</p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "static" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?config=static">Static</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?config=static">Static</a>
+                    {% endif %}
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "dynamic" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?config=dynamic">Dynamic</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?config=dynamic">Dynamic</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div id="div-left-deploy" class="div-left-panel">
+                <p id="p-left-header" class="p-left-header">Deploy</p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "new_release" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?deploy=new_release">New Release</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?deploy=new_release">New Release</a>
+                    {% endif %}
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    {% if section == "rollback" %}
+                        <a id="a-left-item" class="a-left-item-selected" href="/bukin/?deploy=rollback">Rollback</a>
+                    {% else %}
+                        <a id="a-left-item" class="a-left-item" href="/bukin/?deploy=rollback">Rollback</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div id="div-left-monitorings" class="div-left-panel">
+                <p id="p-left-header" class="p-left-header">Monitoring</p>
+                <p id="p-left-item" class="p-left-item">
+                    <a id="a-left-item" class="a-left-item" href="{{ monitoring_link_vm }}">VirtualMachine</a>
+                    <img id="img-left-cloud" class="img-left" src="{{ url_for('static', filename='images/yandex_cloud.png') }}">
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    <a id="a-left-item" class="a-left-item" href="{{ monitoring_link_services }}">Services</a>
+                    <img id="img-left-cloud" class="img-left" src="{{ url_for('static', filename='images/yandex_cloud.png') }}">
+                </p>
+                <p id="p-left-item" class="p-left-item">
+                    <a id="a-left-item" class="a-left-item" href="{{ monitoring_link_pg }}">PostgreSQL</a>
+                    <img id="img-left-cloud" class="img-left" src="{{ url_for('static', filename='images/yandex_cloud.png') }}">
+                </p>
+            </div>
+        </div>
+        <div id="div-main-right" class="div-main-right">
+            {% block div_main_content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

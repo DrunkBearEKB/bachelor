@@ -1,0 +1,9 @@
+/.idea/
+/dbs/
+/logs/
+/bachelor-env/
+/bachelor-venv/
+/configs/secrets.json
+/configs/dynamic.cfg.json
+PID-*
+sources.tar.gz

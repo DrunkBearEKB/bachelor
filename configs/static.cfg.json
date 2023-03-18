@@ -1,0 +1,85 @@
+{
+  "servants": {
+    "scheduler": {
+      "plugins": {
+        "bachelor_core.application.plugins.dynamic_cfg.DynamicCfgPlugin": {
+          "filename": "./configs/dynamic.cfg.json"
+        },
+        "bachelor_core.application.plugins.secrets.SecretsPlugin": {
+          "filename": "./configs/secrets.json"
+        },
+        "bachelor_core.application.plugins.dbhelper.DBHelperPlugin": {
+          "db_id": "db_scheduler"
+        }
+      },
+      "launch": {
+        "port": 1111
+      }
+    },
+    "worker": {
+      "plugins": {
+        "bachelor_core.application.plugins.dynamic_cfg.DynamicCfgPlugin": {
+          "filename": "./configs/dynamic.cfg.json"
+        },
+        "bachelor_core.application.plugins.secrets.SecretsPlugin": {
+          "filename": "./configs/secrets.json"
+        }
+      },
+      "processors": {
+        "processors.sleep_processor.SleepProcessor": {
+
+        },
+        "processors.telegram_notify_processor.TelegramNotifyProcessor": {
+          "token_secret": "BachelorNotifyBot_token",
+          "chat_id_secret": "BachelorNotifyBot_chat_id"
+        }
+      }
+    },
+    "bukin": {
+      "plugins": {
+        "bachelor_core.application.plugins.dynamic_cfg.DynamicCfgPlugin": {
+          "filename": "./configs/dynamic.cfg.json"
+        },
+        "bachelor_core.application.plugins.secrets.SecretsPlugin": {
+          "filename": "./configs/secrets.json"
+        }
+      },
+      "launch": {
+        "port": 80
+      }
+    },
+    "candace": {
+      "plugins": {
+        "bachelor_core.application.plugins.dynamic_cfg.DynamicCfgPlugin": {
+          "filename": "./configs/dynamic.cfg.json"
+        },
+        "bachelor_core.application.plugins.secrets.SecretsPlugin": {
+          "filename": "./configs/secrets.json"
+        },
+        "bachelor_core.application.plugins.threading.ThreadingPlugin": {
+
+        }
+      },
+      "launch": {
+        "port": 1112
+      }
+    }
+  },
+  "components": {
+    "db_scheduler": {
+      "user": "PG_USER",
+      "password": "PG_PASSWORD",
+      "host": "PG_HOST",
+      "port": "PG_PORT",
+      "database": "scheduler"
+    },
+    "bukin_monitorings": {
+      "vm": "BukinMonitorings_link_vm",
+      "services": "BukinMonitorings_link_services",
+      "pg": "BukinMonitorings_link_pg"
+    },
+    "yandex_monitoring": {
+      "folder_id": "YandexCloud_folder_id"
+    }
+  }
+}

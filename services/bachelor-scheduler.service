@@ -1,0 +1,10 @@
+[Unit]
+Description=Scheduler - микросервис для управления выполнением задач
+PartOf=bachelor.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/grig-ivanenko/bachelor
+ExecStart=sudo /usr/bin/python3 /home/grig-ivanenko/bachelor/src/scheduler/scheduler.py
+Restart=on-failure
+RestartSec=1

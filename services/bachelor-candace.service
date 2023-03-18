@@ -1,0 +1,10 @@
+[Unit]
+Description=Candace - микросервис для сбора и отправки метрик
+PartOf=bachelor.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/grig-ivanenko/bachelor
+ExecStart=sudo /usr/bin/python3 /home/grig-ivanenko/bachelor/src/candace/candace.py
+Restart=on-failure
+RestartSec=1

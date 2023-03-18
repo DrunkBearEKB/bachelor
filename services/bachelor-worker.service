@@ -1,0 +1,10 @@
+[Unit]
+Description=Worker - микросервис, выполняющий задачи
+PartOf=bachelor.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/grig-ivanenko/bachelor
+ExecStart=sudo /usr/bin/python3 /home/grig-ivanenko/bachelor/src/worker/worker.py
+Restart=on-failure
+RestartSec=1

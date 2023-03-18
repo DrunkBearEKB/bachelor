@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_error.css') }}">
+{% endblock %}
+{% block div_main %}
+    <div id="div-main-empty-space" class="div-main-empty-space"></div>
+    <div id="div-main-content" class="div-main-content">
+        <p id="p-error-code" class="p-error-code">{{ error_code }}</p>
+        <p id="p-error-description" class="p-error-description">
+            Error {{ error_code }}: {{ error_description }}
+        </p>
+        <details>
+            <summary>Error traceback</summary>
+            {% for error_line in error_lines %}
+            <p class="p-error-line">{{ error_line }}</p>
+            {% endfor %}
+        </details>
+    </div>
+{% endblock %}

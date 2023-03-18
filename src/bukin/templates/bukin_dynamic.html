@@ -1,0 +1,8 @@
+{% extends "bukin.html" %}
+{% block head_secondary %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_bukin_dynamic.css') }}">
+{% endblock %}
+{% block div_main_content %}
+    <p id="p-content-header" class="p-content-header">Configs / Dynamic</p>
+    <textarea id="textarea-dynamic" class="textarea-dynamic" cols="40" rows="20" autofocus></textarea>
+{% endblock %}

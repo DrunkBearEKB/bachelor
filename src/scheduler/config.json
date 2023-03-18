@@ -1,0 +1,8 @@
+{
+  "scheduler": {
+    "plugins": [
+      "bachelor_core.application.plugins.dbhelper.DHelperPlugin",
+      "bachelor_core.application.plugins.data_broker.DataBrokerPlugin"
+    ]
+  }
+}

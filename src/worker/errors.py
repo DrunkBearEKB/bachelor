@@ -1,0 +1,2 @@
+class InvalidTaskData(Exception):
+    pass

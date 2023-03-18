@@ -1,0 +1,14 @@
+[Unit]
+Description=Bachelor - родительский сервис для всех микросервисов
+Wants=bachelor-bukin.service
+Wants=bachelor-candace.service
+Wants=bachelor-scheduler.service
+Wants=bachelor-worker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/grig-ivanenko/bachelor
+ExecStart=echo 0
+
+[Install]
+WantedBy=multi-user.target

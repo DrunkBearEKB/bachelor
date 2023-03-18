@@ -1,0 +1,22 @@
+.div-main-empty-space {
+    height: 20%;
+}
+.div-main-content {
+    width: 80%;
+    height: 80%;
+}
+.p-error-code {
+    font-size: 56px;
+    margin: 0px 0px 4px 0px;
+}
+.p-error-description {
+    font-size: 32px;
+    margin: 4px 0px 14px 0px;
+}
+.img-error {
+    width: 10%;
+}
+.p-error-line {
+    font-size: 18px;
+    margin: 4px 0px 4px 0px;
+}

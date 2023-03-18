@@ -1,0 +1,10 @@
+[Unit]
+Description=Bukin - админка
+PartOf=bachelor.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/grig-ivanenko/bachelor
+ExecStart=sudo /usr/bin/python3 /home/grig-ivanenko/bachelor/src/bukin/bukin.py
+Restart=on-failure
+RestartSec=1

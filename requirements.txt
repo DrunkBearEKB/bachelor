@@ -1,0 +1,6 @@
+SQLAlchemy~=2.0.0
+Flask-SQLAlchemy
+Flask~=2.2.2
+requests~=2.22.0
+psycopg2-binary~=2.9.5
+setuptools~=45.2.0

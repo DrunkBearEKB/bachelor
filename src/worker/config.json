@@ -1,0 +1,10 @@
+{
+  "worker": {
+    "plugins": [
+
+    ],
+    "processors": [
+      "processors.sleep_processor.SleepProcessor"
+    ]
+  }
+}
